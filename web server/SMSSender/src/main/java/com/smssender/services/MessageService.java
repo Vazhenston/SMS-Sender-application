@@ -39,9 +39,9 @@ public class MessageService {
     }
 
     public String getResultMessage(Object name, Object orderId, Object date) throws ParseException {
-        DateFormat df = new SimpleDateFormat("dd MMMM yyyy года (EEEE)");
-        return String.format("Здравствуйте, %s. Ваш заказ №%d ожидает получения по адресу: %s. " +
-                        "Срок хранения до %s. Спешите забрать свой заказ, ждём Вас! \"KazanExpress\"", name,
+        DateFormat df = new SimpleDateFormat("dd MMMM yyyy (EEEE)", Locale.ENGLISH);
+        return String.format("Hello, %s. Your order №%d is waiting for you at %s. " +
+                        "Storage period until %s. Hurry to pick up your order, we are waiting for you! \"KazanExpress\"", name,
                 Long.parseLong((String) orderId), sheetService.getAddressPoint(), df.format(getCalendar(date).getTime()));
     }
 
