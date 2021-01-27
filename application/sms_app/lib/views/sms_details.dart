@@ -73,14 +73,14 @@ class _SMSDetailsState extends State<SMSDetails> {
                           children: [
                             Center(
                               child: Text(
-                                'Номер телефона',
+                                'Phone numbers',
                                 style: TextStyle(
                                     fontSize: 15, fontWeight: FontWeight.bold),
                               ),
                             ),
                             Center(
                                 child: Text(
-                              'Сообщение',
+                              'Message text',
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.bold),
                             )),
@@ -121,7 +121,7 @@ class _SMSDetailsState extends State<SMSDetails> {
                           child: Center(
                               child: RaisedButton(
                             child: Container(
-                              child: Text('Разослать сообщения'),
+                              child: Text('Send SMS'),
                             ),
                             onPressed: () {
                               for (var item in smsDataList) {

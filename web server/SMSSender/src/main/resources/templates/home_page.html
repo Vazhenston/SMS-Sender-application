@@ -4,22 +4,22 @@
         xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Заполнение данных</title>
+    <title>Pick-up points data</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Ввод данных</h1>
+<h1>Enter data</h1>
 <form th:action="@{/home_page}" th:object="${sheet}" method="POST">
-    <label for="sheetUrl">Вставьте ссылку на свою таблицу:</label>
+    <label for="sheetUrl">Table URL:</label>
     <input type="text" id="sheetUrl" name="sheetUrl" th:value="*{sheetUrl}"/><br/>
-    <label for="listName">Введите название вашего листа:</label>
+    <label for="listName">Sheet name:</label>
     <input type="text" id="listName" name="listName" th:value="*{listName}"/><br/>
-    <label for="pointAddress">Введите адрес Вашей точки (прим. Кузнецова, 5):</label>
+    <label for="pointAddress">Pick-up point address (ex. Jaselská 246):</label>
     <input type="text" id="pointAddress" name="pointAddress" th:value="*{pointAddress}"/><br/>
-    <label for="currentDate">Введите дату заказов:</label>
+    <label for="currentDate">Order date:</label>
     <input type="date" id="currentDate" name="currentDate" th:value="*{currentDate}"/><br/>
     <input class="btn btn-success" type="submit" value="ОК!"/>
 </form>

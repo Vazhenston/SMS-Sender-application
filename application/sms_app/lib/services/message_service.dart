@@ -12,7 +12,7 @@ class MessageService {
       var smsDataList = SMSDataList.fromJson(jsonResponse);
       return smsDataList;
     } else {
-      throw Exception('Failed to load album');
+      throw Exception('Failed');
     }
   }
 }

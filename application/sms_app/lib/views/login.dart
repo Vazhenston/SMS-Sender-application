@@ -24,7 +24,7 @@ class LogInState extends State<LogIn> {
     final phoneNumberField = TextFormField(
       onSaved: (String value) => {user.phoneNumber = int.parse(value)},
       decoration: const InputDecoration(
-        hintText: 'Номер телефона',
+        hintText: 'Phone number',
       ),
       validator: (value) {
         return requiredValidator(value);
@@ -33,7 +33,7 @@ class LogInState extends State<LogIn> {
     final logInButton = RaisedButton(
       child: Container(
         width: double.infinity,
-        child: Center(child: Text('Войти в аккаунт')),
+        child: Center(child: Text('Sign-in')),
       ),
       onPressed: () {
         if (formKey.currentState.validate()) {
@@ -60,12 +60,12 @@ class LogInState extends State<LogIn> {
             child: Column(
               children: <Widget>[
                 Text(
-                  'Вход в аккаунт',
+                  'Account login',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
                 spacing,
                 Text(
-                    'Войдите в аккаунт, чтобы отправлять сообщения от лица Вашего ПВЗ'),
+                    'Login in your account to send sms'),
                 spacing,
                 phoneNumberField,
                 spacing,
@@ -81,9 +81,9 @@ class LogInState extends State<LogIn> {
 
   requiredValidator(value) {
     if (value.isEmpty) {
-      return 'Не заполнили номер телефона';
+      return 'Enter phone number';
     } else if (!(logInService.getPointsPhones().contains(int.parse(value)))) {
-      return 'Номер телефона не принадлежит ни одному из ПВЗ';
+      return 'Invalid phone number';
     }
     return null;
   }

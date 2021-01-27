@@ -12,13 +12,13 @@
 </head>
 <body>
 <div class="container">
-    <h1>Все сообщения</h1>
-    <span th:if="${messages.size()==0}">Сегодня можешь не отправлять SMSки</span>
+    <h1>All messages</h1>
+    <span th:if="${messages.size()==0}">No SMS for you today</span>
     <table th:if="${messages.size()>0}" class="table table-hover">
         <thead class="tableSubHeadingColor">
         <tr>
-            <td>Номер телефона</td>
-            <td>Сообщение</td>
+            <td>Phone numbers</td>
+            <td>Messages</td>
             <td></td>
             <td></td>
         </tr>
@@ -27,12 +27,12 @@
         <tr th:each="message : ${messages}">
             <td th:text="${message.phoneNumber}"></td>
             <td th:text="${message.messageText}"></td>
-            <td><a class="btn btn-secondary" th:href="${'/sms_sender/messages/edit/' + message.id}">Редактировать</a></td>
-            <td><a class="btn btn-danger" th:href="${'/sms_sender/messages/delete/' + message.id}">Удалить</a></td>
+            <td><a class="btn btn-secondary" th:href="${'/sms_sender/messages/edit/' + message.id}">Edit</a></td>
+            <td><a class="btn btn-danger" th:href="${'/sms_sender/messages/delete/' + message.id}">Delete</a></td>
         </tr>
         </tbody>
     </table>
 </div>
-<a class="btn btn-primary" th:href="${'/sms_sender/messages/new'}">Добавить сообщение</a>
+<a class="btn btn-primary" th:href="${'/sms_sender/messages/new'}">Add new message</a>
 </body>
 </html>
