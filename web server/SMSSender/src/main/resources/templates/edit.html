@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать сообщение</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Редактирование</h1>
+    <form th:method="POST" th:object="${message}" th:action="@{/messages/edit/{id}(id=${message.id})}">
+        <label for="phoneNumber">Введите номер телефона: </label>
+        <input type="number" th:field="*{phoneNumber}" id="phoneNumber"/>
+        <br/>
+        <label for="messageText">Введите сообщение: </label>
+        <input type="text" th:field="*{messageText}" id="messageText"/>
+        <br/>
+        <input class="btn btn-success" type="submit" value="Сохранить"/>
+    </form>
+</body>
+</html>

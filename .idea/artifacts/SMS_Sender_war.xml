@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SMS-Sender:war">
+    <output-path>$PROJECT_DIR$/web server/SMSSender/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SMS-Sender</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SMS-Sender.war">
+      <element id="artifact" artifact-name="SMS-Sender:war exploded" />
+    </root>
+  </artifact>
+</component>
