@@ -1,5 +1,5 @@
 # SMS Sender
-### Application for reading data from Google Sheets and sending SMS using this data
+### Application for automatization of a client notification process for delivery service
 ## Description
 I worked in the pick-up point and I had to check google sheets and send SMS manually to clients, who did not pick up their packages. I wanted to automate it so 
 as not to waste time on it.
