@@ -42,7 +42,7 @@ Since this is my first project, the main tasks were writing a CRUD MVC-applicati
 
 ![Image alt](https://github.com/Vazhenston/pictures/raw/main/app.jpg)
 <br>
-## Future scope
+## Future scopes
 - [ ] To complete implementing authorization. If we have one pick-up point, the application will work. Else all data of all tables will be merged
 - [ ] To remove data after sending SMS. Now we need to remove one manually
 - [ ] To add a refresh button in the android app. Now we have new data, we need login anew to refresh data
