@@ -20,6 +20,6 @@ public class MessageRestController {
 
     @GetMapping("/api/messages")
     public List<Message> getMessages(){
-        return messageService.getAllMessages();
+        return messageService.getMessagesOfUser(messageService.getUser());
     }
 }

@@ -1,7 +1,9 @@
 package com.smssender.services;
 
 import com.smssender.model.Message;
+import com.smssender.model.User;
 import com.smssender.repositories.MessageRepository;
+import com.smssender.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,16 @@ public class MessageService {
     private MessageRepository messageRepository;
 
     private SheetService sheetService;
+
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     @Autowired
     public void setMessageRepository(MessageRepository messageRepository) {
@@ -31,9 +43,13 @@ public class MessageService {
         for (List row : persons) {
             if (row.get(2).equals(dateFormat.format(sheetService.getCurrentDate()))) {
                 Message message = new Message();
+                message.setId(Long.parseLong((String) row.get(0)));
                 message.setPhoneNumber(Long.parseLong((String) row.get(5)));
                 message.setMessageText(getResultMessage(row.get(4), row.get(0), row.get(2)));
-                messageRepository.save(message);
+                message.setUser(getUser());
+                if (!messageRepository.existsById(message.getId())) {
+                    messageRepository.save(message);
+                }
             }
         }
     }
@@ -53,8 +69,8 @@ public class MessageService {
         return calendar;
     }
 
-    public List<Message> getAllMessages() {
-        return messageRepository.findAll();
+    public List<Message> getMessagesOfUser(User user) {
+        return messageRepository.findMessageByUser(user);
     }
 
     public void deleteMessageByID(Long id) {

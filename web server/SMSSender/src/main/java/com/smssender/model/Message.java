@@ -11,13 +11,15 @@ import javax.persistence.*;
 @Table(name = "messages")
 public class Message {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "order_id")
     private Long id;
     @Column(name = "telephone_number")
     private Long phoneNumber;
     @Column(name = "message")
     private String messageText;
+    @ManyToOne()
+    @JoinColumn(name = "user_email")
+    private User user;
 
     public Message() {
     }
@@ -44,5 +46,13 @@ public class Message {
 
     public void setMessageText(String messageText) {
         this.messageText = messageText;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

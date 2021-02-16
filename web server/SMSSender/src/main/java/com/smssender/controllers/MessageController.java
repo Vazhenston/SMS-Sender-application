@@ -18,7 +18,7 @@ public class MessageController {
 
     @GetMapping("/messages")
     public String getAllMessages(Model model) {
-        model.addAttribute("messages", messageService.getAllMessages());
+        model.addAttribute("messages", messageService.getMessagesOfUser(messageService.getUser()));
         return "messages";
     }
 

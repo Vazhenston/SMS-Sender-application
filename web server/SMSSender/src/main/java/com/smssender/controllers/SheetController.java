@@ -1,6 +1,5 @@
 package com.smssender.controllers;
 
-import com.smssender.model.Message;
 import com.smssender.model.view.Sheet;
 import com.smssender.services.MessageService;
 import com.smssender.services.SheetService;
