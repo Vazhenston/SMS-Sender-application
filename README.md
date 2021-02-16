@@ -13,37 +13,37 @@ Since this is my first project, the main tasks were writing a CRUD MVC-applicati
 **0. We have a template table in Goolge Sheets**
 <br>
 
-![Image alt](https://github.com/Vazhenston/pictures/raw/main/table.png)
+![Image alt](https://github.com/Vazhenston/SMS-Sender-application/blob/main/screenshots/table.png)
 <br>
 **1. Log in via Google**
 <br>
 
-![Image alt](https://github.com/Vazhenston/pictures/raw/main/oauth.png)
+![Image alt](https://github.com/Vazhenston/SMS-Sender-application/blob/main/screenshots/oauth.png)
 <br>
 **2. Enter data**
 - The pick-up point address for composing a message
 - If today date is the order date plus 3 days, we have to send SMS
 <br>
 
-![Image alt](https://github.com/Vazhenston/pictures/raw/main/enter.png)
+![Image alt](https://github.com/Vazhenston/SMS-Sender-application/blob/main/screenshots/enter.png)
 <br>
 **3. Then we can check messages and phone numbers, edit, delete ones, or add more (typical CRUD app)**
 <br>
 
-![Image alt](https://github.com/Vazhenston/pictures/raw/main/web.png)
+![Image alt](https://github.com/Vazhenston/SMS-Sender-application/blob/main/screenshots/web.png)
 <br>
 **4. Start app on an Android smartphone and login there. Phone number must equal work phone number**
 <br>
 
-![Image alt](https://github.com/Vazhenston/pictures/raw/main/login.jpg)
+![Image alt](https://github.com/Vazhenston/SMS-Sender-application/blob/main/screenshots/login.jpg)
 <br>
 **5. Send SMS**
 <br>
 
-![Image alt](https://github.com/Vazhenston/pictures/raw/main/app.jpg)
+![Image alt](https://github.com/Vazhenston/SMS-Sender-application/blob/main/screenshots/app.jpg)
 <br>
 ## Future scopes
-- [ ] To complete implementing authorization. If we have one pick-up point, the application will work. Else all data of all tables will be merged
+- [x] To complete implementing authorization. If we have one pick-up point, the application will work. Else all data of all tables will be merged
 - [ ] To remove data after sending SMS. Now we need to remove one manually
 - [ ] To add a refresh button in the android app. Now we have new data, we need login anew to refresh data
 - [ ] To build the good front-end
